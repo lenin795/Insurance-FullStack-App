@@ -4,7 +4,7 @@ const { users } = require('./insuranceschema')
 require('dotenv').config()
 
 const register=async(newuser)=>{
-    const exists=await users.findone({username:newuser.username})
+    const exists=await users.findOne({username:newuser.username})
     if(exists) return null
     const createduser=new users(newuser)
     await createduser.save()
@@ -12,7 +12,7 @@ const register=async(newuser)=>{
 }
 const loggin =async(obj)=>{
     const{username,password}=obj
-    const exists=await users.findone({username})
+    const exists=await users.findOne({username})
 
     if(!exists||!(await bcrypt.compare(password,exists.password)))
         return null

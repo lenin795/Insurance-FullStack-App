@@ -1,0 +1,22 @@
+@durl=http://localhost:3000/db
+
+get {{durl}}/
+###
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dnZWQiOiJsZW5pbjEyMyIsImlhdCI6MTc2MjU5NzQxOX0.3aQIlhkdLz8DY_lGW_UWTgKB-lmt771aZgc7nu6iaZ4
+
+###
+post {{durl}}/
+Content-Type: application/json
+
+{
+    "policyholdername":"dhaun",
+    "policyname":"car",
+    "policytype":"car",
+    "providername":"akodA",
+    "premiumAmount":"100000",
+    "Frequency":"1",
+    "startdate":"01/01/2025",
+    "enddate":"31/12/2025",
+    "policystatus":"current"
+
+}

@@ -7,15 +7,16 @@ const userSchema=mongoose.Schema({
     "password":{type:String},
     "role":{type:String,enum:['user','admin'],default:'admin'}
 })
-const insuranceSchema=mongoose.connect({
-    "policyholdername":{type:String,require:true,unique:true},
+const insuranceSchema=mongoose.Schema({
+    
+    "policyholdername":{type:String,require:true},
     "policyname":{type:String,require:true},
     "policytype":{type:String,require:true},
     "providername":{type:String,require:true},
-    "Premium Amount":{type:Number},
+    "PremiumAmount":{type:Number},
     "Frequency":{type:Number},
-    "startdate":{type:Date},
-    "enddate":{type:Date},
+    "startdate":{type:String},
+    "enddate":{type:String},
     "policystatus":{type:String,require:true}
 })
 

@@ -1,0 +1,19 @@
+@log=http://localhost:3000/auth
+
+post {{log}}/signup
+Content-Type: application/json
+
+{
+    "username":"lenin123",
+    "name":"lenin",
+    "password":"lenin@123",
+    "role":"admin"
+}
+###
+post {{log}}/signin
+Content-Type: application/json
+
+{
+    "username":"lenin123",
+    "password":"lenin@123"
+}
