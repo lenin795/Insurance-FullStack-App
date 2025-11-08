@@ -18,5 +18,5 @@ const loggin =async(obj)=>{
         return null
     const token = jwt.sign({"logged":username},process.env.SECRET_KEY)
     return token;
-    }
-    module.exports={register,loggin}
+}
+module.exports={register,loggin}
