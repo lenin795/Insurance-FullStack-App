@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+// src/components/App.js
+import React, { useState, useEffect } from "react"
+import Login from "./components/auth/Login.js"
+import MainLayout from "./components/layout/MainLayout.js"
 
-function App() {
+export default function InsuranceApp() {
+  const [user, setUser] = useState(null)
+  const [darkMode, setDarkMode] = useState(true)
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', darkMode)
+  }, [darkMode])
+
+  const handleLogin = () => {
+    setUser({
+      name: "Rahul Kumar",
+      email: "rahul.kumar@example.com",
+      phone: "+91 98765 43210",
+      avatar: "RK"
+    })
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen transition-colors">
+      {!user ? <Login onLogin={handleLogin} /> : <MainLayout user={user} onLogout={() => setUser(null)} darkMode={darkMode} setDarkMode={setDarkMode} />}
     </div>
-  );
+  )
 }
-
-export default App;
