@@ -1,11 +1,12 @@
-// src/main.js
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.js'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const user = { name: "Amit Sharma", email: "amit@email.com", avatar: "A", phone: "+91-9898989898" };
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <App user={user} />
   </React.StrictMode>
-)
+);

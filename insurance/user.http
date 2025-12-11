@@ -4,10 +4,10 @@ post {{log}}/signup
 Content-Type: application/json
 
 {
-    "username":"lenin123",
-    "name":"lenin",
-    "password":"lenin@123",
-    "role":"admin"
+    "username":"deva243",
+    "name":"deva",
+    "password":"deva@1234",
+    "role":"user"
 }
 ###
 post {{log}}/signin
