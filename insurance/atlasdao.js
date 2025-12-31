@@ -9,8 +9,6 @@ const getAllRecords = async (user) => {
   }
 };
 
-
-
 const create = async (newRecord) => {
   const newinsurance = new insurance(newRecord);
   await newinsurance.save();
